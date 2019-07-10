@@ -41,11 +41,6 @@
     "semi": true,
     "singleQuote": true
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "jest": {
     "preset": "ts-jest"
   },
