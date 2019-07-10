@@ -1,0 +1,55 @@
+{
+  "name": "strind",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Partition strings based on character indices",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "main": "./lib/strind.js",
+  "types": "./lib/strind.d.ts",
+  "scripts": {
+    "develop": "tsc -w",
+    "build": "run-s clean build:*",
+    "build:lib": "tsc -p tsconfig.prod.json",
+    "lint": "tslint --fix -p . -c tslint.json",
+    "test": "jest",
+    "test:tdd": "jest --watch",
+    "prepublishOnly": "run-s lint test build",
+    "clean": "rm -rf lib"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@types/jest": "^24.0.15",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metonym/strind.git"
+  },
+  "homepage": "https://github.com/metonym/strind",
+  "keywords": [
+    "string",
+    "string manipulation",
+    "partition",
+    "indices",
+    "utility"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "bugs": "https://github.com/metonym/strind/issues"
+}
