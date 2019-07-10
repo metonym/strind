@@ -7,6 +7,8 @@
 
 > Partition strings based on character indices.
 
+### [Changelog](CHANGELOG.md)
+
 ## Install
 
 ```bash
