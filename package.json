@@ -11,7 +11,7 @@
     "build": "run-s clean build:*",
     "build:lib": "tsc -p tsconfig.prod.json",
     "lint": "tslint --fix -p . -c tslint.json",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "prepublishOnly": "run-s lint test build",
     "clean": "rm -rf lib"
