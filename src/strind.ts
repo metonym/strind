@@ -18,14 +18,10 @@ function strind<T = string>(
 
   for (let i = 0, len = idx.length; i < len; i++) {
     const [start, end] = idx[i] as TupleIndices;
+    const floor = start >= 0 ? start : 0;
+    const ceiling = end >= strsLen ? strsLen : end + 1;
 
-    if (start === end) {
-      updatePartition(strs[start]);
-    } else {
-      const floor = start >= 0 ? start : 0;
-      const ceiling = end > strsLen ? strsLen : end;
-      updatePartition(str.slice(floor, ceiling + 1));
-    }
+    updatePartition(str.slice(floor, ceiling));
 
     if (i === 0 && start > 0) {
       updateNonmatched(0, start, 0);
