@@ -7,7 +7,7 @@
 
 > Partition strings based on character indices.
 
-### [Changelog](CHANGELOG.md)
+## [Changelog](CHANGELOG.md)
 
 ## Install
 
