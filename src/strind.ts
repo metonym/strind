@@ -21,11 +21,11 @@ function strind<T = string>(
     const floor = start >= 0 ? start : 0;
     const ceiling = end >= strsLen ? strsLen : end + 1;
 
-    updatePartition(str.slice(floor, ceiling));
-
     if (i === 0 && start > 0) {
       updateNonmatched(0, start, 0);
     }
+
+    updatePartition(str.slice(floor, ceiling));
 
     if (i < len - 1 && end < strsLen) {
       if (end + 1 !== (idx[i + 1] as TupleIndices)[0]) {

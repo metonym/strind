@@ -1,6 +1,20 @@
 import strind from '../strind';
 
 describe('strind', () => {
+  test('callback example', () => {
+    const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => {
+      return {
+        text: chars,
+        isHighlighted: matches
+      };
+    });
+    expect(result).toEqual([
+      { isHighlighted: false, text: 'a' },
+      { isHighlighted: true, text: 'b' },
+      { isHighlighted: true, text: 'cd' }
+    ]);
+  });
+
   test('same character (single array) – no callback', () => {
     expect(strind('abcd', [0, 0])).toEqual(['a']);
   });
