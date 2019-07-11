@@ -1,9 +1,9 @@
 /**
  * Partitions a string based on character indices.
  *
- * @param str - string to partition
- * @param indices - array of tuples to match [start, end] indices
- * @param callback
+ * @param {string} str - string to partition
+ * @param {[number,number][]} indices - array of tuples to match [start, end] indices
+ * @param {function} callback - callback function called with matching characters
  */
 function strind<T = string>(
   str: string,
