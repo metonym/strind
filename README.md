@@ -24,6 +24,33 @@ const result = strind('abcd', [[1, 1], [2, 6]]);
 console.log(result); // ['b', 'cd']
 ```
 
+### Callback
+
+An optional callback function can be passed as the third argument.
+
+The function is called with the substring `chars` and boolean `matches` if the substring matches the array indices.
+
+```js
+import strind from 'strind';
+
+const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => {
+  return {
+    text: chars,
+    isHighlighted: matches
+  };
+});
+
+console.log(result);
+/**
+ * [
+      { isHighlighted: false, text: 'a' },
+      { isHighlighted: true, text: 'b' },
+      { isHighlighted: true, text: 'cd' }
+    ]
+ *
+ */
+```
+
 ## License
 
 [MIT](LICENSE)
