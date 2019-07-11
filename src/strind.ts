@@ -16,6 +16,29 @@ function strind<T = string>(
   const partition: T[] | string[] = [];
   const nonmatched: INonmatched[] = [];
 
+  function updatePartition(chars: string) {
+    if (callback) {
+      const cb = callback({ chars, matches: true });
+      (partition as T[]).push(cb);
+    } else {
+      (partition as string[]).push(chars);
+    }
+  }
+
+  function updateNonmatched(open: number, close: number, index: number) {
+    const chars = str.slice(open, close);
+
+    nonmatched.push({
+      chars,
+      index
+    });
+
+    if (callback) {
+      const cb = callback({ chars, matches: false });
+      (partition as T[]).push(cb);
+    }
+  }
+
   for (let i = 0, len = idx.length; i < len; i++) {
     const [start, end] = idx[i] as TupleIndices;
     const floor = start >= 0 ? start : 0;
@@ -43,29 +66,6 @@ function strind<T = string>(
 
     if (end >= strsLen) {
       break;
-    }
-  }
-
-  function updatePartition(chars: string) {
-    if (callback) {
-      const cb = callback({ chars, matches: true });
-      (partition as T[]).push(cb);
-    } else {
-      (partition as string[]).push(chars);
-    }
-  }
-
-  function updateNonmatched(open: number, close: number, index: number) {
-    const chars = str.slice(open, close);
-
-    nonmatched.push({
-      chars,
-      index
-    });
-
-    if (callback) {
-      const cb = callback({ chars, matches: false });
-      (partition as T[]).push(cb);
     }
   }
 
