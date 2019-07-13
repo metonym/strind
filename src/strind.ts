@@ -19,10 +19,11 @@ function strind<T = string>(
   function updateNonmatched(open: number, close: number, index: number) {
     const chars = str.slice(open, close);
 
-    nonmatched.push({
-      chars,
-      index
-    });
+    if (!chars.length) {
+      return;
+    }
+
+    nonmatched.push({ chars, index });
 
     if (callback) {
       const cb = callback({ chars, matches: false });
@@ -48,18 +49,10 @@ function strind<T = string>(
       (partition as string[]).push(chars);
     }
 
-    if (i < len - 1 && end < strsLen) {
-      if (end + 1 !== (idx[i + 1] as TupleIndices)[0]) {
-        updateNonmatched(
-          end + 1,
-          (idx[i + 1] as TupleIndices)[0],
-          partition.length
-        );
-      }
-    }
-
-    if (i === len - 1 && end < strsLen) {
-      updateNonmatched(end + 1, strsLen, partition.length);
+    if (end < strsLen) {
+      const open = end + 1;
+      const close = i < len - 1 ? (idx[i + 1] as TupleIndices)[0] : strsLen;
+      updateNonmatched(open, close, partition.length);
     }
 
     if (end >= strsLen) {
