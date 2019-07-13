@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-*   Add option to return matched or unmatched characters
+*   Add configuration
+
+## [0.2.0](https://github.com/metonym/strind/tree/0.2.0) - 2019-07-13
+
+*   Return object containing `matched` and `unmatched` values
+([2fc5387](https://github.com/metonym/strind/commit/2fc5387f195910b41ff60531dee8aa068bd97c79))
 
 ## [0.1.1](https://github.com/metonym/strind/tree/0.1.1) - 2019-07-10
-
-### Changed
 
 *   Set floor and ceiling for matching character once
 ([5eebcdd](https://github.com/metonym/strind/commit/5eebcdd7f8ea47b05b2d59c8fa30c8552e091977))
