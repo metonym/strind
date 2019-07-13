@@ -1,6 +1,13 @@
 import strind from '../strind';
 
 describe('strind', () => {
+  test('full string', () => {
+    expect(strind('abcd', [0, 3])).toEqual({
+      matched: ['abcd'],
+      unmatched: []
+    });
+  });
+
   test('callback example', () => {
     const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => {
       return {
