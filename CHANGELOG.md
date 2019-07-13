@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 *   Add configuration
 
+## [0.2.1](https://github.com/metonym/strind/tree/0.2.1) - 2019-07-13
+
+*   Ignore empty string
+([f69d290](https://github.com/metonym/strind/commit/f69d29057bd9232c2bdb95da439b696c125e89fa))
+
 ## [0.2.0](https://github.com/metonym/strind/tree/0.2.0) - 2019-07-13
 
 *   Return object containing `matched` and `unmatched` values
