@@ -17,6 +17,16 @@ describe('strind', () => {
   });
 
   test('same character (single array) – no callback', () => {
+    expect(strind('abcd', [[1, 1], [2, 6]])).toEqual({
+      matched: ['b', 'cd'],
+      unmatched: [
+        {
+          chars: 'a',
+          index: 0
+        }
+      ]
+    });
+
     const result = strind('abcd', [0, 0]);
     expect(result.matched).toEqual(['a']);
     expect(result.unmatched).toEqual([{ chars: 'bcd', index: 1 }]);
