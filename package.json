@@ -12,8 +12,7 @@
     "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
-    "prepublishOnly": "yarn build",
-    "clean": "rm -rf lib"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
