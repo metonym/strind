@@ -47,6 +47,9 @@
       "@commitlint/config-conventional"
     ]
   },
+  "resolutions": {
+    "**/**/lodash": "^4.17.12"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/metonym/strind.git"
