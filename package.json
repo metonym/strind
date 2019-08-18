@@ -4,8 +4,8 @@
   "license": "MIT",
   "description": "Partition strings based on character indices",
   "author": "Eric Liu (https://github.com/metonym)",
-  "main": "./lib/strind.js",
-  "types": "./lib/strind.d.ts",
+  "main": "lib/strind.js",
+  "types": "lib/strind.d.ts",
   "scripts": {
     "develop": "tsc -w",
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
