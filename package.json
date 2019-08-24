@@ -56,11 +56,13 @@
     "string",
     "string manipulation",
     "partition",
+    "char",
+    "index",
     "indices",
     "utility"
   ],
   "files": [
-    "lib/"
+    "lib"
   ],
   "bugs": "https://github.com/metonym/strind/issues"
 }
