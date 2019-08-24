@@ -26,12 +26,7 @@ describe('strind', () => {
   test('same character (single array) – no callback', () => {
     expect(strind('abcd', [[1, 1], [2, 6]])).toEqual({
       matched: ['b', 'cd'],
-      unmatched: [
-        {
-          chars: 'a',
-          index: 0
-        }
-      ]
+      unmatched: [{ chars: 'a', index: 0 }]
     });
 
     const result = strind('abcd', [0, 0]);
@@ -42,38 +37,20 @@ describe('strind', () => {
   test('same character – no callback', () => {
     expect(strind('abcdef', [[1, 1], [3, 4]]).matched).toEqual(['b', 'de']);
     expect(strind('abcdef', [[1, 1], [3, 4]]).unmatched).toEqual([
-      {
-        chars: 'a',
-        index: 0
-      },
-      {
-        chars: 'c',
-        index: 1
-      },
-      {
-        chars: 'f',
-        index: 2
-      }
+      { chars: 'a', index: 0 },
+      { chars: 'c', index: 1 },
+      { chars: 'f', index: 2 }
     ]);
 
     expect(strind('abcd', [[0, 0], [1, 1]]).matched).toEqual(['a', 'b']);
     expect(strind('abcd', [[0, 0], [1, 1]]).unmatched).toEqual([
-      {
-        chars: 'cd',
-        index: 2
-      }
+      { chars: 'cd', index: 2 }
     ]);
 
     expect(strind('abcdef', [[0, 0], [3, 4]]).matched).toEqual(['a', 'de']);
     expect(strind('abcdef', [[0, 0], [3, 4]]).unmatched).toEqual([
-      {
-        chars: 'bc',
-        index: 1
-      },
-      {
-        chars: 'f',
-        index: 2
-      }
+      { chars: 'bc', index: 1 },
+      { chars: 'f', index: 2 }
     ]);
   });
 
