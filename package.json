@@ -1,6 +1,6 @@
 {
   "name": "strind",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Partition strings based on character indices",
   "author": "Eric Liu (https://github.com/metonym)",
