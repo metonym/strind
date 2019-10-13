@@ -1,4 +1,4 @@
-import strind from '../strind';
+import strind from '../src/strind';
 
 describe('strind', () => {
   test('full string', () => {
