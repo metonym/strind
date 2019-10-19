@@ -14,6 +14,8 @@ yarn add strind
 
 ## Usage
 
+Required arguments are the string and an array of tuples that denote the start and end parse indices.
+
 ```js
 import strind from 'strind';
 
@@ -36,19 +38,20 @@ console.log(result);
 
 ### Callback
 
-An optional callback function can be passed as the third argument.
+The module accepts an optional callback as the third argument.
 
 The function is called with the substring `chars` and boolean `matches` if the substring matches the array indices.
 
 ```js
 import strind from 'strind';
 
-const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => {
-  return {
-    text: chars,
-    isHighlighted: matches
-  };
-});
+// signature
+// strind(string, Array<Tuple>, [function])
+
+const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => ({
+  isHighlighted: matches,
+  text: chars
+}));
 
 console.log(result);
 /**
