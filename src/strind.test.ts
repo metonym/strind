@@ -1,5 +1,5 @@
 import * as test from "tape";
-import strind from "../src/strind";
+import strind from "./strind";
 
 test("full string", (t) => {
   t.deepEqual(strind("abcd", [0, 3]), {

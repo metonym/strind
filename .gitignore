@@ -1,7 +1,5 @@
-/coverage
+.DS_Store
 /lib
 /node_modules
-.DS_Store
 yarn-debug.log*
 yarn-error.log*
-*.tgz
