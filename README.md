@@ -2,7 +2,6 @@
 
 [![NPM][npm]][npm-url]
 [![Build][build]][build-badge]
-[![Coverage][codecov-shield]][codecov]
 
 > Partition strings based on character indices.
 
@@ -17,9 +16,12 @@ yarn add strind
 Required arguments are the string and an array of tuples that denote the start and end parse indices.
 
 ```js
-import strind from 'strind';
+import strind from "strind";
 
-const result = strind('abcd', [[1, 1], [2, 6]]);
+const result = strind("abcd", [
+  [1, 1],
+  [2, 6],
+]);
 
 console.log(result);
 /**
@@ -43,15 +45,22 @@ The module accepts an optional callback as the third argument.
 The function is called with the substring `chars` and boolean `matches` if the substring matches the array indices.
 
 ```js
-import strind from 'strind';
+import strind from "strind";
 
 // signature
 // strind(string, Array<Tuple>, [function])
 
-const result = strind('abcd', [[1, 1], [2, 6]], ({ chars, matches }) => ({
-  isHighlighted: matches,
-  text: chars
-}));
+const result = strind(
+  "abcd",
+  [
+    [1, 1],
+    [2, 6],
+  ],
+  ({ chars, matches }) => ({
+    isHighlighted: matches,
+    text: chars,
+  })
+);
 
 console.log(result);
 /**
@@ -74,5 +83,3 @@ console.log(result);
 [npm-url]: https://npmjs.com/package/strind
 [build]: https://travis-ci.com/metonym/strind.svg?branch=master
 [build-badge]: https://travis-ci.com/metonym/strind
-[codecov]: https://codecov.io/gh/metonym/strind
-[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/strind.svg
