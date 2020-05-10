@@ -7,15 +7,14 @@
   "main": "lib/strind.js",
   "types": "lib/strind.d.ts",
   "scripts": {
-    "test": "tsnd node_modules/tape/bin/tape src/**.test.ts",
-    "test:tdd": "tsnd --respawn node_modules/tape/bin/tape src/**.test.ts",
+    "test": "tsnd src/*.test.ts",
+    "test:tdd": "tsnd --respawn src/*.test.ts",
     "prepack": "tsc"
   },
   "devDependencies": {
-    "@types/tape": "^4.13.0",
-    "tape": "^5.0.0",
+    "@types/node": "^13.13.5",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.6.2"
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
